@@ -22,6 +22,10 @@ public class GetAtOutOfBoundsThrowsException<E> extends DoublyLinkedList<E> {
         // Forces all gets to be within the bounds of the list
         return super.get(Math.min(super.size() - 1, Math.max(0, index)));
     }
+    @Override
+    public E set(int index, E element){
+        return super.set(Math.min(super.size() - 1, Math.max(0, index)),element);
+    }
 }
 
 
