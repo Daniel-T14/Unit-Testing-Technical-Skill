@@ -1,0 +1,9 @@
+services:
+  junit-test:
+    image: maven
+    container_name: junit_test
+    volumes:
+      - ./src:/app/src
+      - ./container_pom.xml:/app/pom.xml
+    working_dir: /app
+    command: mvn clean test
