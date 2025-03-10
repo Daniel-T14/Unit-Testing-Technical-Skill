@@ -25,7 +25,7 @@ public class DoublyLinkedListTest {
      */ 
     @Test
     public void testGetAtIndex() {
-        //if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
         //Add to the doubly linked list a couple elements.
         list.addLast(30);
         // Test for valid indexes
@@ -54,12 +54,12 @@ public class DoublyLinkedListTest {
      */ 
     @Test
     public void testGetFirst() {
-       // if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
         //Add to the doubly linked list a couple elements.
         list.addLast(10);
         list.addFirst(30);
         // Test for valid indexes
-        assertEquals(Integer.valueOf(30), list.getFirst());
+        Assertions.assertEquals(Integer.valueOf(30), list.getFirst());
     }
     
     /**
@@ -69,7 +69,6 @@ public class DoublyLinkedListTest {
     @Test
     public void testGetFirstNoSuchElementException() {
         if (SHOULD_FAIL) list = new GetNoSuchElementException<>();
-        
         assertEquals(null, () -> list.getFirst());
     }
     
@@ -82,7 +81,7 @@ public class DoublyLinkedListTest {
      */ 
     @Test
     public void testGetLast() {
-       // if (SHOULD_FAIL) list = new WrongValueThrowsException();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException();
         //Add to the doubly linked list a couple elements.
         list.addLast(10);
         list.addLast(30);
@@ -108,7 +107,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testRemoveFirst(){
-       // if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
         list.addFirst(1);
         list.addLast(2);
         //not sure of this should be of integer value check or E
@@ -129,7 +128,7 @@ public class DoublyLinkedListTest {
      * @see WrongValueThrowsException
      */
     public void testRemoveLast(){
-       // if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
         list.addFirst(1);
         list.addFirst(2);
         //not sure of this should be of integer value check or E
@@ -154,7 +153,7 @@ public class DoublyLinkedListTest {
      */ 
     @Test
     public void testisElementIndex() {
-       // if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
         //Add to the doubly linked list a couple elements.
         list.addLast(10);
         list.addLast(30);
@@ -172,7 +171,7 @@ public class DoublyLinkedListTest {
      */ 
     @Test
     public void testisPositionIndex() {
-        //if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
         //Add to the doubly linked list a couple elements.
         list.addLast(10);
         list.addLast(30);
@@ -199,7 +198,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testAdd(){
-        //if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
         list.add(1, 4);
         assertEquals(Integer.valueOf(4), list.get(1));
     }
@@ -222,13 +221,13 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testAddFirst() {
-        //if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
         //Add to the doubly linked list a couple elements.
         list.addLast(10); //simulate having the linked list already filled with elements
         list.addFirst(30); //add at the beginning of the doubly linked list
 
         //Check that the start of the doubly linked list is 30, which is what addFirst should have done
-        assertEquals(Integer.valueOf(30), () ->list.getFirst()); 
+        Assertions.assertEquals(Integer.valueOf(30), () ->list.getFirst()); 
     }
 
     /**
@@ -237,10 +236,10 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testAddLast() {
-        //if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
         list.addLast(1);
         list.addLast(2);
-        assertEquals(Integer.valueOf(2), list.getLast());
+        Assertions.assertEquals(Integer.valueOf(2), list.getLast());
     }
 
     // Tests for remove
@@ -251,7 +250,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testRemoveAtIndex() {
-        //if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
         
         list.addFirst(1);
         list.addLast(2);
@@ -278,7 +277,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testSize(){
-        //if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
         list.addFirst(1);
         assertEquals(Integer.valueOf(1), list.size());
     }
@@ -289,7 +288,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testSet(){
-        //if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
+        if (SHOULD_FAIL) list = new WrongValueThrowsException<>();
         list.addFirst(1);
         list.addLast(2);
         assertEquals(Integer.valueOf(2), list.set(1, 5));
@@ -301,7 +300,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testsSetGetAtOutOfBoundsThrowsException(){
-        //if (SHOULD_FAIL) list = new GetAtOutOfBoundsThrowsException<>();
+        if (SHOULD_FAIL) list = new GetAtOutOfBoundsThrowsException<>();
         list.addFirst(1);
         assertThrows(IndexOutOfBoundsException.class, list.set(-1, 3)); //negative bounds
         assertThrows(IndexOutOfBoundsException.class, list.set(2, 3)); //beyond size
