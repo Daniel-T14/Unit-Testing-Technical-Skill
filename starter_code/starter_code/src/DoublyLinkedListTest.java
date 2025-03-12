@@ -150,21 +150,61 @@ public class DoublyLinkedListTest {
         assertThrows(IndexOutOfBoundsException.class, ()-> list.remove(4));
 
     }
+
+    /**
+     * @author Diego Navarro
+     * @see GetWrongReturn
+     */
+    @Test
+    public void testAdd() {
+        if (SHOULD_FAIL) list = new GetWrongReturn<>();
+
+        list.addLast(10);
+        list.addLast(20);
+        list.add(1, 15); // Insert 15 between 10 and 20
+
+        assertEquals(10, list.get(0));
+        assertEquals(15, list.get(1));
+        assertEquals(20, list.get(2));
+    }
+
+    /**
+     * @author Diego Navarro
+     * @see GetWrongReturn
+     */
+    @Test
+    public void testSize() {
+        if (SHOULD_FAIL) list = new GetWrongReturn<>();
+        assertEquals(0, list.size());
+        list.addLast(1);
+        assertEquals(1, list.size());
+    }
+    /**
+     * @author Diego Navarro
+     * @see GetWrongReturn
+     */
+    @Test
+    public void testSet() {
+        if (SHOULD_FAIL) list = new GetWrongReturn<>();
+        list.addLast(5);
+        list.addLast(10);
+        list.set(1, 20); // Change element at index 1 from 10 to 20
+        assertEquals(5, list.get(0));
+        assertEquals(20, list.get(1));
+    }
+    /**
+     * @author Diego Navarro
+     * @see GetWrongReturn
+     */
+    @Test
+    public void testGetFirst() {
+        if (SHOULD_FAIL) list = new GetWrongReturn<>();
     
-    //TODO: Remaining Text & breakers
-
-    //TestAddAtCorrectIndex
- 
-
-    // TestSizeReturn
-    // correctness
-
-    // Tests for set
-    //correctness 
-
-    // Tests for getFirst
-    // Correctness 
-  
+        list.addLast(100);
+        list.addFirst(50);
+        assertEquals(50, list.getFirst());
+    }
+    
 
     /**
      * @author Diego Navarro
