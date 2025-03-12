@@ -6,6 +6,9 @@ public class GetWrongReturn<E> extends DoublyLinkedList<E>{
     
     @Override
     public E get(int index) {
+        if (index==0 ){
+            return super.get(index+1);
+        }
         return super.get(index-1);
     }
     @Override

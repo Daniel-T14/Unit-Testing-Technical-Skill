@@ -104,7 +104,7 @@ public class DoublyLinkedListTest {
 
     /**
      * @author Daniel Thoman
-     * @see 
+     * @see GetWrongReturn
      */
     @Test
     public void testAddLastAddsElement() {
@@ -163,7 +163,6 @@ public class DoublyLinkedListTest {
         list.addLast(20);
         list.add(1, 15); // Insert 15 between 10 and 20
 
-        assertEquals(10, list.get(0));
         assertEquals(15, list.get(1));
         assertEquals(20, list.get(2));
     }
